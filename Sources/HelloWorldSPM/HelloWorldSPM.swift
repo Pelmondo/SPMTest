@@ -16,6 +16,8 @@ public class HelloWorldSPM {
         }
         print(message)
     }
+    
+    public init() {}
 }
 
 public protocol HelloWorldSPMDelegate: AnyObject {
