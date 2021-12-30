@@ -7,9 +7,17 @@
 
 public class HelloWorldSPM {
     
-    private var textForPrint: String?
+    public weak var delegate: HelloWorldSPMDelegate?
     
     public func printText() {
-        print(textForPrint)
+        guard let message = delegate?.getText() else {
+            print("delegate not set")
+            return
+        }
+        print(message)
     }
+}
+
+public protocol HelloWorldSPMDelegate: AnyObject {
+    func getText() -> String
 }
